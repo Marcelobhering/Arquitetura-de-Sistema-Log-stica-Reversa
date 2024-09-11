@@ -9,4 +9,15 @@ Esperamos aprender como otimizar a logística reversa de e-commerces de forma su
 
 
 ## Que perguntas precisamos que sejam respondidas?
-- Item 1
+- Como a solução se integrará a diferentes plataformas de e-commerce?
+- Quais serão os custos de implementação e operação para diferentes tipos de e-commerces?
+- Como será o modelo de precificação baseado no uso (volume de devoluções)?
+- Qual o impacto ambiental que essa solução pode gerar a longo prazo?
+
+
+## Quais são os nossos principais riscos?
+- Falta de adesão por parte dos e-commerces, principalmente os menores.
+- Dificuldade em integrar a solução a sistemas legados de e-commerces mais antigos.
+- Custos operacionais elevados no início da implementação.
+- Resistência de clientes em aceitar soluções de devolução que envolvam processos adicionais de reciclagem.
+
