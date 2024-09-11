@@ -105,8 +105,7 @@ Esperamos aprender como:
 
 ---
 
-## Conclusão
+## 11.Arquitetura (Modelo Freeform - Versão inicial)
 
-Com a implementação desse sistema de logística reversa sustentável, esperamos revolucionar a forma como e-commerces gerenciam suas devoluções. Ao focar em eficiência, sustentabilidade e integração simplificada, nosso objetivo é minimizar tanto os impactos financeiros quanto os ambientais.
-
+![image](https://github.com/user-attachments/assets/d152b87a-4a13-4484-86b3-414d8a2e0bba)
 
