@@ -113,39 +113,39 @@ Esperamos aprender como:
 
 ## Descrição de Cada Componente do Diagrama
 
---### ERP/WMS (Sistema de Gestão de Pedidos e Estoque)
+ ### ERP/WMS (Sistema de Gestão de Pedidos e Estoque)
 - **Função**: Representa o sistema de gestão de pedidos e estoques utilizado pelo e-commerce. Ele gerencia a criação de ordens de compra, controle de estoque e solicitações de devolução.
 - **Integração**: O ERP/WMS se comunica com o API Gateway da solução SaaS para fazer solicitações de devolução, receber atualizações de status via Webhooks, e obter informações sobre o ciclo de vida das devoluções.
 
---### API Gateway
+ ### API Gateway
 - **Função**: Atua como o ponto central de comunicação entre o ERP/WMS e os microserviços da solução SaaS. Ele recebe as requisições HTTP (REST APIs) e envia os dados para os microserviços corretos. Também é responsável por disparar Webhooks para atualizar o ERP/WMS sobre o status das devoluções.
 - **Segurança**: Gerencia autenticação, rate-limiting, e pode armazenar logs e métricas de requisições.
 
---### MicroServiço de Autenticação
+ ### MicroServiço de Autenticação
 - **Função**: Responsável por autenticar e autorizar o acesso dos usuários do sistema (tanto o e-commerce quanto os consumidores), garantindo que apenas usuários válidos possam interagir com os serviços.
 - **Banco de Dados**: Armazena informações de usuários, sessões e tokens de autenticação.
 
---### MicroServiço de Gestão de Devoluções
+ ### MicroServiço de Gestão de Devoluções
 - **Função**: Gerencia o ciclo de vida completo de uma devolução, desde o momento em que ela é solicitada até seu processamento e finalização (seja reciclagem, reaproveitamento ou outro).
 - **Banco de Dados**: Mantém registros detalhados de cada devolução, incluindo status, datas e motivo da devolução.
 
---### MicroServiço de Rastreamento
+ ### MicroServiço de Rastreamento
 - **Função**: Rastreia a movimentação dos produtos devolvidos durante o processo logístico. Ele coleta e armazena atualizações de status ("coletado", "em trânsito", "entregue", etc.) e informa tanto o e-commerce quanto o consumidor sobre o progresso.
 - **Banco de Dados**: Armazena eventos de rastreamento para consulta histórica e relatórios.
 
---### MicroServiço de Logística
+ ### MicroServiço de Logística
 - **Função**: Gerencia a logística reversa, organizando a coleta e o transporte de produtos devolvidos em parceria com empresas de transporte. Ele também otimiza as rotas e gerencia o tempo de coleta.
 - **Banco de Dados**: Armazena informações de ordens de coleta, rotas e status de transporte.
 
---### MicroServiço de Reciclagem
+ ### MicroServiço de Reciclagem
 - **Função**: Determina o destino final dos produtos devolvidos, como reaproveitamento, conserto ou reciclagem. Ele também coordena com parceiros de reciclagem para garantir que os produtos sejam processados corretamente.
 - **Banco de Dados**: Armazena informações sobre produtos reciclados e o impacto ambiental gerado por cada ciclo.
 
---### MicroServiço de Notificações
+ ### MicroServiço de Notificações
 - **Função**: Envia notificações automáticas para os consumidores e e-commerces informando o status de cada devolução e qualquer mudança importante.
 - **Banco de Dados**: Mantém um histórico das notificações enviadas para controle e auditoria.
 
---### MicroServiço de Relatórios
+ ### MicroServiço de Relatórios
 - **Função**: Gera relatórios detalhados sobre o desempenho da solução de logística reversa, incluindo impacto ambiental, eficiência das devoluções, e estatísticas de reciclagem.
 - **Banco de Dados**: Armazena dados históricos para gerar relatórios e dashboards.
   
@@ -232,4 +232,20 @@ A escolha de Kubernetes como plataforma de orquestração de microserviços foi 
 
 ---
 
+## Arquiteturas do projeto em camadas do C4
 
+   ## Nível Contexto
+
+![contextoSaas](https://github.com/user-attachments/assets/4eb8f2d7-d920-4530-a9c6-6a8216193e9e)
+
+---
+
+  ## Nível Container
+  
+![containerNovo](https://github.com/user-attachments/assets/2dd47823-b312-475b-ab46-52636072584e)
+
+---
+
+ ## Nível Componente
+ 
+ ![componentesSass](https://github.com/user-attachments/assets/e87014c0-9d61-4877-a24e-daf93494dcd3)
