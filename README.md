@@ -107,5 +107,6 @@ Esperamos aprender como:
 
 ## 11.Arquitetura (Modelo Freeform - Versão inicial)
 
-![image](https://github.com/user-attachments/assets/d152b87a-4a13-4484-86b3-414d8a2e0bba)
+![image](https://github.com/user-attachments/assets/ad037ffa-5a0a-4576-a870-37db150c8545)
+
 
