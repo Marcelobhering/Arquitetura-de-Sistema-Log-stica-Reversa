@@ -177,7 +177,9 @@ A arquitetura ajuda a pensar sobre como os diferentes microserviços podem opera
 
 ## Metamodelo
 
-O metamodelo desta arquitetura é o padrão de microserviços orquestrados por um API Gateway com comunicação assíncrona via Webhooks e APIs. Ele se baseia na separação de responsabilidades, onde cada microserviço cuida de uma função específica do negócio (ex.: devoluções, logística, reciclagem).
+Arquitetura de Aplicações:
+
+Compreende Componentes de Aplicação (microsserviços), Serviços de Aplicação (autenticação, gestão de devoluções), e Interações de Aplicação (comunicação entre microsserviços via APIs e publish-subscribe).
 
 ---
 
