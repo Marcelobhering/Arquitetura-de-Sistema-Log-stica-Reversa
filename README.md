@@ -198,19 +198,19 @@ O diagrama cobre os principais componentes e fluxos da solução SaaS de logíst
 
 ## Poderia ser Simplificado e Ainda Assim Ser Eficaz?
 
-Sim, o diagrama poderia ser simplificado, mas isso poderia impactar a visibilidade das interações mais complexas (como Webhooks e notificações).
+Sim, o diagrama poderia ser simplificado, mas isso poderia impactar a visibilidade das interações mais complexas (como tópicos do kafka).
 
 ---
 
 ## Discussão Importante na Equipe
 
-Uma discussão importante poderia girar em torno de como garantir a escalabilidade e a resiliência do sistema, especialmente em momentos de pico de devoluções e aumento de volume de dados.
+Uma discussão importante foi, como garantir a escalabilidade e a resiliência do sistema? Especialmente em momentos de pico de devoluções e aumento de volume de dados.
 
 ---
 
 ## Decisões com Dificuldade
 
-A decisão sobre usar ou não mensageria assíncrona pode ter sido um ponto difícil, já que nem todos os microserviços podem precisar disso, mas a mensageria aumenta a resiliência do sistema.
+A decisão sobre usar ou não mensageria assíncrona, já que nem todos os microserviços podem precisar disso, mas a mensageria aumenta a resiliência do sistema.
 
 ---
 
