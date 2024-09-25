@@ -107,7 +107,8 @@ Esperamos aprender como:
 
 ##  Arquitetura (Modelo Freeform - Versão inicial)
 
-![integração entre o ERP_WMS do e-commerce e a solução SaaS de logística reversa sustentávelFinal](https://github.com/user-attachments/assets/4ecaa074-5d8f-4b49-9c7e-28a2cd4cba1d)
+![integração entre o ERP_WMS do e-commerce e a solução SaaS de logística reversa sustentávelF](https://github.com/user-attachments/assets/eaf4b065-5154-4202-9bc4-d0ec9ef82616)
+
 
 
 ---
