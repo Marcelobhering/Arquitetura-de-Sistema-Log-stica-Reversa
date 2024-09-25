@@ -191,7 +191,7 @@ Sim, o metamodelo pode ser claramente identificado no diagrama, pois vemos a div
 
 ## O Diagrama Está Completo?
 
-O diagrama cobre os principais componentes e fluxos da solução SaaS de logística reversa sustentável. No entanto, ele poderia incluir mais detalhes sobre a mensageria assíncrona e segurança, além de especificar ferramentas de monitoramento e logs.
+O diagrama cobre os principais componentes e fluxos da solução SaaS de logística reversa sustentável.No entanto, ele poderia incluir mais detalhes de segurança, escalabilidade.
 
 ---
 
