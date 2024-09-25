@@ -170,8 +170,8 @@ A arquitetura ajuda a pensar sobre como os diferentes microserviços podem opera
 
 ### Padrões de Resiliência
 
-- **Circuit Breaker**: Provavelmente implementado dentro do Service Mesh para evitar falhas em cascata quando um serviço falha repetidamente.
-- **Retry Pattern**: Pode estar embutido no orquestrador Saga ou nos microserviços para tentar novamente uma operação falha, garantindo maior resiliência.
+- **Circuit Breaker**:  Implementado dentro do Service Mesh para evitar falhas em cascata quando um serviço falha repetidamente.
+- **Retry Pattern**: Está embutido no orquestrador Saga e nos microserviços para tentar novamente uma operação falha, garantindo maior resiliência.
 
   
 ---
