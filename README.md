@@ -167,10 +167,11 @@ A arquitetura ajuda a pensar sobre como os diferentes microserviços podem opera
 
 ## Existem Padrões Ocultos?
 
-- **Mensageria Assíncrona**: A arquitetura pode incluir mensageria assíncrona para comunicação entre microserviços.
-- **Circuit Breaker/Retry**: Um padrão oculto pode ser a implementação de circuit breakers ou tentativas de reenvio nos serviços críticos.
-- **public/subscribe**:
-- **EDA**:
+### Padrões de Resiliência
+
+- **Circuit Breaker**: Provavelmente implementado dentro do Service Mesh para evitar falhas em cascata quando um serviço falha repetidamente.
+- **Retry Pattern**: Pode estar embutido no orquestrador Saga ou nos microserviços para tentar novamente uma operação falha, garantindo maior resiliência.
+
   
 ---
 
