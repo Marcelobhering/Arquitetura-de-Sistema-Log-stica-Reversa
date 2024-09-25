@@ -135,6 +135,8 @@ Esperamos aprender como:
 16. **Serviço de Coleta de Logs**: Coleta logs de operação e eventos dos microserviços para análise e auditoria.
 17. **Service Mesh**: Gerencia a comunicação entre os microserviços, oferecendo recursos como balanceamento de carga, autenticação e monitoramento de tráfego.
 18. **Serviço de Monitoramento de Infraestruturas**: Monitora a performance e a saúde dos serviços, garantindo que os sistemas estejam operacionais.
+19. **Kubernetes**: Escalabilidade horizontal dos microsserviços, onde novas instâncias podem ser adicionadas conforme necessário, garantindo resiliência do sistema.
+20. **Bancos de Dados **: Cada microserviço possui seu banco de dados dedicado, garantindo independência e integridade dos dados.
 
 ---
 
@@ -186,7 +188,7 @@ Compreende Componentes de Aplicação (microsserviços), Serviços de Aplicaçã
 
 ## Pode ser Discernido no Diagrama/Arquitetura Única?
 
-Sim, o metamodelo pode ser claramente identificado no diagrama, pois vemos a divisão clara de responsabilidades entre os microserviços e o uso de Webhooks para notificação de eventos.
+Sim, apesar da arquitetura ser modular (com microserviços e diferentes camadas), ela é organizada e orquestrada para funcionar como uma solução única, voltada para um propósito específico.
 
 ---
 
