@@ -155,10 +155,14 @@ A arquitetura ajuda a pensar sobre como os diferentes microserviços podem opera
 
 ## Padrões Essenciais no Diagrama/Arquitetura
 
-- **Microserviços**: A arquitetura é baseada no padrão de microserviços, onde cada serviço tem uma responsabilidade única.
-- **API Gateway**: Centraliza as comunicações externas (ERP/WMS) por meio de um API Gateway.
-- **Webhooks**: O uso de Webhooks para atualizações assíncronas permite que os sistemas externos sejam notificados automaticamente.
-  
+### Principais Tecnologias e Padrões
+
+- **Microserviços**: Arquitetura baseada em microserviços permite a escalabilidade, desenvolvimento e manutenção independente de cada componente.
+- **Saga Pattern**: Orquestrador Saga gerencia a consistência das transações distribuídas, importante para operações complexas e sequenciais.
+- **Publish-Subscribe (Broker)**: Desacopla os microserviços, facilitando a comunicação entre eles de forma assíncrona.
+- **Service Mesh**: Introduz um padrão para a gestão de tráfego entre microserviços, adicionando resiliência e segurança.
+- **API Gateway**: Centraliza a entrada de requisições, roteando e controlando o acesso aos microserviços.
+
 ---
 
 ## Existem Padrões Ocultos?
