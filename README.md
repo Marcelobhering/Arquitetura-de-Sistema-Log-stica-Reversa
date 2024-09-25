@@ -107,48 +107,34 @@ Esperamos aprender como:
 
 ##  Arquitetura (Modelo Freeform - Versão inicial)
 
-![image](https://github.com/user-attachments/assets/ad037ffa-5a0a-4576-a870-37db150c8545)
+![integração entre o ERP_WMS do e-commerce e a solução SaaS de logística reversa sustentávelFinal](https://github.com/user-attachments/assets/4ecaa074-5d8f-4b49-9c7e-28a2cd4cba1d)
+
 
 ---
 
 ## Descrição de Cada Componente do Diagrama
 
- ### ERP/WMS (Sistema de Gestão de Pedidos e Estoque)
-- **Função**: Representa o sistema de gestão de pedidos e estoques utilizado pelo e-commerce. Ele gerencia a criação de ordens de compra, controle de estoque e solicitações de devolução.
-- **Integração**: O ERP/WMS se comunica com o API Gateway da solução SaaS para fazer solicitações de devolução, receber atualizações de status via Webhooks, e obter informações sobre o ciclo de vida das devoluções.
+### Componentes do Sistema de Gestão de Devoluções
 
- ### API Gateway
-- **Função**: Atua como o ponto central de comunicação entre o ERP/WMS e os microserviços da solução SaaS. Ele recebe as requisições HTTP (REST APIs) e envia os dados para os microserviços corretos. Também é responsável por disparar Webhooks para atualizar o ERP/WMS sobre o status das devoluções.
-- **Segurança**: Gerencia autenticação, rate-limiting, e pode armazenar logs e métricas de requisições.
+1. **Cliente**: Representa o usuário final que inicia o processo de devolução por meio da plataforma de e-commerce.
+2. **Plataforma e-commerce**: Sistema que interage diretamente com o cliente, gerenciando o front-end da operação de vendas e devoluções.
+3. **ERP/WMS (Sistema de Gestão de Pedidos e Estoque)**: Sistema que gerencia os pedidos e o estoque da empresa, comunicando-se com o e-commerce para manter as informações atualizadas. Recebe as requisições de devolução (HTTP) e envia atualizações de status via webhook.
+4. **Firewall**: Componente de segurança que protege a comunicação entre os sistemas internos e externos, filtrando e controlando o tráfego de dados.
+5. **API Gateway**: Responsável por gerenciar as APIs, roteando as solicitações para os serviços apropriados dentro do ambiente de containers. Atua como um ponto de entrada unificado.
+6. **MicroServiço Autenticação**: Realiza a autenticação dos usuários e serviços, garantindo que apenas requisições autorizadas possam acessar o sistema.
+7. **MicroServiço Gestão de Devoluções**: Gerencia o fluxo de devolução dos produtos, interagindo com o orquestrador de Saga para coordenar os microserviços envolvidos no processo.
+8. **Orquestrador Saga**: Gerencia as transações distribuídas de forma assíncrona, garantindo a consistência entre os diferentes microserviços que participam do fluxo de devolução.
+9. **Broker (Fila de Mensagens)**: Facilita a comunicação entre os microserviços através do padrão Publish-Subscribe, permitindo a troca de mensagens de forma desacoplada.
+10. **Canal Resposta**: Responsável por consolidar e gerenciar as respostas dos diferentes microserviços, retornando o status das operações ao sistema de origem.
+11. **MicroServiço Rastreamento**: Realiza o rastreamento dos itens devolvidos, confirmando o status do retorno do produto.
+12. **MicroServiço Logística**: Gerencia a logística da devolução, coordenando as atividades de transporte e recebimento dos itens.
+13. **MicroServiço Reciclagem**: Administra o processo de reciclagem dos itens devolvidos, avaliando se o item é elegível para reciclagem e gerenciando o fluxo de reciclagem confirmada ou não.
+14. **MicroServiço Notificações**: Envia notificações para os usuários e sistemas sobre o status das devoluções e outras atualizações relevantes.
+15. **MicroServiço Relatórios**: Coleta dados para geração de relatórios gerenciais e operacionais, apoiando na tomada de decisões.
+16. **Serviço de Coleta de Logs**: Coleta logs de operação e eventos dos microserviços para análise e auditoria.
+17. **Service Mesh**: Gerencia a comunicação entre os microserviços, oferecendo recursos como balanceamento de carga, autenticação e monitoramento de tráfego.
+18. **Serviço de Monitoramento de Infraestruturas**: Monitora a performance e a saúde dos serviços, garantindo que os sistemas estejam operacionais.
 
- ### MicroServiço de Autenticação
-- **Função**: Responsável por autenticar e autorizar o acesso dos usuários do sistema (tanto o e-commerce quanto os consumidores), garantindo que apenas usuários válidos possam interagir com os serviços.
-- **Banco de Dados**: Armazena informações de usuários, sessões e tokens de autenticação.
-
- ### MicroServiço de Gestão de Devoluções
-- **Função**: Gerencia o ciclo de vida completo de uma devolução, desde o momento em que ela é solicitada até seu processamento e finalização (seja reciclagem, reaproveitamento ou outro).
-- **Banco de Dados**: Mantém registros detalhados de cada devolução, incluindo status, datas e motivo da devolução.
-
- ### MicroServiço de Rastreamento
-- **Função**: Rastreia a movimentação dos produtos devolvidos durante o processo logístico. Ele coleta e armazena atualizações de status ("coletado", "em trânsito", "entregue", etc.) e informa tanto o e-commerce quanto o consumidor sobre o progresso.
-- **Banco de Dados**: Armazena eventos de rastreamento para consulta histórica e relatórios.
-
- ### MicroServiço de Logística
-- **Função**: Gerencia a logística reversa, organizando a coleta e o transporte de produtos devolvidos em parceria com empresas de transporte. Ele também otimiza as rotas e gerencia o tempo de coleta.
-- **Banco de Dados**: Armazena informações de ordens de coleta, rotas e status de transporte.
-
- ### MicroServiço de Reciclagem
-- **Função**: Determina o destino final dos produtos devolvidos, como reaproveitamento, conserto ou reciclagem. Ele também coordena com parceiros de reciclagem para garantir que os produtos sejam processados corretamente.
-- **Banco de Dados**: Armazena informações sobre produtos reciclados e o impacto ambiental gerado por cada ciclo.
-
- ### MicroServiço de Notificações
-- **Função**: Envia notificações automáticas para os consumidores e e-commerces informando o status de cada devolução e qualquer mudança importante.
-- **Banco de Dados**: Mantém um histórico das notificações enviadas para controle e auditoria.
-
- ### MicroServiço de Relatórios
-- **Função**: Gera relatórios detalhados sobre o desempenho da solução de logística reversa, incluindo impacto ambiental, eficiência das devoluções, e estatísticas de reciclagem.
-- **Banco de Dados**: Armazena dados históricos para gerar relatórios e dashboards.
-  
 ---
 
 ## Requisitos Importantes
