@@ -136,7 +136,7 @@ Esperamos aprender como:
 17. **Service Mesh**: Gerencia a comunicação entre os microserviços, oferecendo recursos como balanceamento de carga, autenticação e monitoramento de tráfego.
 18. **Serviço de Monitoramento de Infraestruturas**: Monitora a performance e a saúde dos serviços, garantindo que os sistemas estejam operacionais.
 19. **Kubernetes**: Escalabilidade horizontal dos microsserviços, onde novas instâncias podem ser adicionadas conforme necessário, garantindo resiliência do sistema.
-20. **Bancos de Dados **: Cada microserviço possui seu banco de dados dedicado, garantindo independência e integridade dos dados.
+20. **Bancos de Dados**: Cada microserviço possui seu banco de dados dedicado, garantindo independência e integridade dos dados.
 
 ---
 
